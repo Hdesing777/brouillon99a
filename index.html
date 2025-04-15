@@ -160,22 +160,6 @@
     input:focus {
       outline: 2px solid #FFD700;
     }
-
-    /* Icônes d'avantages */
-    .product-box ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 10px 0;
-    }
-    .product-box ul li {
-      font-size: 14px;
-      color: #333;
-      margin: 5px 0;
-    }
-    .product-box ul li i {
-      color: #FFD700;
-      margin-right: 8px;
-    }
   </style>
 </head>
 <body>
@@ -188,67 +172,120 @@
     </div>
     <p style="text-align: center; margin-bottom: 20px;">RAKOTO dia manolotra ho an'ny mpanjifa ny box internet Airtel, haingam-pandeha, mora vidy, ary azo entina amin'izay tiana.</p><p class="section-title">1 - Safidio amin'ireo ny box internet mety aminao</p>
 
-    <div class="product-box">
-      <img src="smartbox.jpg" alt="Smartbox 4G">
-      <h3>Smartbox 4G</h3>
-      <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro. Parfait pour une maison ou un bureau.</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i>Connexion stable</li>
-        <li><i class="fas fa-check-circle"></i>Wifi jusqu'à 32 appareils</li>
-        <li><i class="fas fa-check-circle"></i>Installation simple</li>
-        <li><span style="color: red; font-weight: bold;">Prix : 149 000 Ar</span></li>
-      </ul>
-      <button onclick="selectProduct('Smartbox 4G', '149000 Ar', 'smartbox.jpg')">Commander cette Box</button>
-    </div>
+<div class="product-box">
+  <img src="smartbox.jpg" alt="Smartbox 4G">
+  <h3>Smartbox 4G</h3>
+  <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro. Parfait pour une maison ou un bureau.</p>
+  <ul>
+    <li>Connexion stable</li>
+    <li>Wifi jusqu'à 32 appareils</li>
+    <li>Installation simple</li>
+    <li><span style="color: red; font-weight: bold;">Prix : 149 000 Ar</span></li>
+  </ul>
+  <button onclick="selectProduct('Smartbox 4G', '149000 Ar', 'smartbox.jpg')">Commander cette Box</button>
+</div>
 
-    <div class="product-box">
-      <img src="pocketwifi.jpg" alt="Pocket Wifi 4G">
-      <h3>Pocket Wifi 4G</h3>
-      <p>Kely, mora entina amin'ny kitapo. Tena ilaina raha mandehandeha matetika ianao.</p>
-      <ul>
-        <li><i class="fas fa-check-circle"></i>Portable sy kely</li>
-        <li><i class="fas fa-check-circle"></i>Connexion rapide 4G</li>
-        <li><i class="fas fa-check-circle"></i>Autonomie sur batterie</li>
-        <li><span style="color: red; font-weight: bold;">Prix : 99 000 Ar</span></li>
-      </ul>
-      <button onclick="selectProduct('Pocket Wifi 4G', '99000 Ar', 'pocketwifi.jpg')">Commander cette Box</button>
-    </div>
+<div class="product-box">
+  <img src="pocketwifi.jpg" alt="Pocket Wifi 4G">
+  <h3>Pocket Wifi 4G</h3>
+  <p>Kely, mora entina amin'ny kitapo. Tena ilaina raha mandehandeha matetika ianao.</p>
+  <ul>
+    <li>Portable sy kely</li>
+    <li>Connexion rapide 4G</li>
+    <li>Autonomie sur batterie</li>
+    <li><span style="color: red; font-weight: bold;">Prix : 99 000 Ar</span></li>
+  </ul>
+  <button onclick="selectProduct('Pocket Wifi 4G', '99000 Ar', 'pocketwifi.jpg')">Commander cette Box</button>
+</div>
 
-    <p class="section-title">2 - Apetraho eto ny mombamomba anao</p>
+<p class="section-title">2 - Apetraho eto ny mombamomba anao</p>
 
-    <form id="order-form">
-      <img id="selected-image" class="selected-image" src="" alt="Box choisi">
-      <input type="text" name="prenoms" placeholder="Prénoms" required>
-      <input type="text" name="nom" placeholder="Nom de famille" required>
-      <input type="tel" name="numero" placeholder="Téléphone" required>
-      <input type="text" name="produit" id="product-input" readonly>
-      <input type="text" name="prix" id="price-input" readonly>
-      <label for="adresse">Adresse de livraison :</label>
-      <input type="text" name="adresse" id="adresse" placeholder="Votre adresse complète">
-      <div>
-        <input type="checkbox" id="retrait" name="retrait" value="oui">
-        <label for="retrait">Je récupère ma commande au point de vente</label>
-      </div>
-      <button type="submit">CONFIRMER MON ACHAT</button>
-    </form>
+<form id="order-form">
+  <img id="selected-image" class="selected-image" src="" alt="Box choisi">
+  <input type="text" name="prenoms" placeholder="Prénoms" required>
+  <input type="text" name="nom" placeholder="Nom de famille" required>
+  <input type="tel" name="numero" placeholder="Téléphone" required>
+  <input type="text" name="produit" id="product-input" readonly>
+  <input type="text" name="prix" id="price-input" readonly>
+  <label for="adresse">Adresse de livraison :</label>
+  <input type="text" name="adresse" id="adresse" placeholder="Votre adresse complète">
+  <div>
+    <input type="checkbox" id="retrait" name="retrait" value="oui">
+    <label for="retrait">Je récupère ma commande au point de vente</label>
+  </div>
+  <button type="submit">CONFIRMER MON ACHAT</button>
+</form>
 
-    <div id="success-message">
-      <h3>Misaotra betsaka!</h3>
-      <p>Ticket unique : <strong id="ticket-id"></strong></p>
-      <p class="section-title">3 - Safidio amin'ireto ny hifandraisanao amin'ny RAKOTO Commercial Airtel</p>
-      <div class="contact-options">
-        <a id="whatsapp-link" class="whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a id="sms-link" class="sms" href="#" target="_blank"><i class="fas fa-sms"></i> Message Texto</a>
-        <a class="facebook" href="https://www.facebook.com/airtelmadagascar" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-      </div>
-    </div>
+<div id="success-message">
+  <h3>Misaotra betsaka!</h3>
+  <p>Ticket unique : <strong id="ticket-id"></strong></p>
+  <p class="section-title">3 - Safidio amin'ireto ny hifandraisanao amin'ny RAKOTO Commercial Airtel</p>
+  <div class="contact-options">
+    <a id="whatsapp-link" class="whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a id="sms-link" class="sms" href="#" target="_blank"><i class="fas fa-sms"></i> Message Texto</a>
+    <a class="facebook" href="https://www.facebook.com/airtelmadagascar" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+  </div>
+</div>
 
   </div>
   <div class="footer">
     © 2025 Tranokalan'i RAKOTO Commercial Airtel – Powered by Airtel
   </div>
   <script>
-    // Votre code JavaScript pour gérer l'affichage du formulaire et du ticket
+    function updateClock() {
+      const now = new Date();
+      const options = { timeZone: 'Indian/Antananarivo', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      const heure = now.toLocaleTimeString('fr-FR', options);
+      document.getElementById("clock").textContent = "Ora ankehitriny (Madagasikara) : " + heure;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const form = document.getElementById('order-form');
+    const successMessage = document.getElementById('success-message');
+    const adresseInput = document.getElementById('adresse');
+    const retraitCheckbox = document.getElementById('retrait');
+    const selectedImage = document.getElementById('selected-image');
+
+    retraitCheckbox.addEventListener('change', () => {
+      adresseInput.disabled = retraitCheckbox.checked;
+      if (retraitCheckbox.checked) adresseInput.value = '';
+    });
+
+    function selectProduct(name, price, imagePath) {
+      document.getElementById('product-input').value = name;
+      document.getElementById('price-input').value = price;
+      selectedImage.src = imagePath;
+      form.classList.add('show');
+      
+      // Défilement automatique vers le formulaire
+      setTimeout(() => {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const ticket = 'AIRTEL-' + Date.now().toString(36).toUpperCase();
+      document.getElementById('ticket-id').textContent = ticket;
+
+      const nom = form.nom.value;
+      const prenoms = form.prenoms.value;
+      const numero = form.numero.value;
+      const produit = form['produit'].value;
+      const prix = form['prix'].value;
+      const adresse = adresseInput.value;
+      const retrait = retraitCheckbox.checked ? "Oui" : "Non";
+
+      const message = `Ticket: ${ticket}\nNom: ${nom}\nPrénoms: ${prenoms}\nTéléphone: ${numero}\nProduit: ${produit}\nPrix: ${prix}\nAdresse: ${adresse || "Point de vente"}\nRetrait: ${retrait}`;
+
+      document.getElementById('whatsapp-link').href = "https://wa.me/261334816838?text=" + encodeURIComponent(message);
+      document.getElementById('sms-link').href = "sms:+261334816838?body=" + encodeURIComponent(message);
+
+      form.style.display = "none";
+      successMessage.style.display = "block";
+      successMessage.scrollIntoView({ behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>
