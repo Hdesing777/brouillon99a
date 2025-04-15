@@ -20,6 +20,7 @@
       text-align: center;
       font-size: 22px;
       font-weight: bold;
+      letter-spacing: 1px;
     }
     .container {
       max-width: 800px;
@@ -90,6 +91,14 @@
     form.show {
       display: flex;
     }
+    .selected-image {
+      width: 180px;
+      margin: 0 auto 15px;
+      display: block;
+      border: 4px solid #FFD700;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #FFD700;
+    }
     input[type="text"], input[type="tel"] {
       padding: 12px;
       border: 1px solid #ccc;
@@ -148,14 +157,24 @@
       text-align: center;
       margin-bottom: 10px;
     }
-    .container {
-      transition: transform 0.3s;
-    }
     input:focus {
       outline: 2px solid #FFD700;
     }
-    [type="checkbox"]:checked {
-      accent-color: #e60000;
+
+    /* Icônes d'avantages */
+    .product-box ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+    .product-box ul li {
+      font-size: 14px;
+      color: #333;
+      margin: 5px 0;
+    }
+    .product-box ul li i {
+      color: #FFD700;
+      margin-right: 8px;
     }
   </style>
 </head>
@@ -167,21 +186,19 @@
       <img src="rakoto.jpg" alt="RAKOTO - Commercial Airtel" class="rakoto-photo">
       <p style="font-weight: bold; color: #333; margin-top: 10px;">RAKOTO - Commercial Airtel (Vente Professionnelle)</p>
     </div>
-    <p style="text-align: center; margin-bottom: 20px;">RAKOTO dia manolotra ho an'ny mpanjifa ny box internet Airtel, haingam-pandeha, mora vidy, ary azo entina amin'izay tiana.</p>
-
-    <p class="section-title">1 - Safidio amin'ireo ny box internet mety aminao</p>
+    <p style="text-align: center; margin-bottom: 20px;">RAKOTO dia manolotra ho an'ny mpanjifa ny box internet Airtel, haingam-pandeha, mora vidy, ary azo entina amin'izay tiana.</p><p class="section-title">1 - Safidio amin'ireo ny box internet mety aminao</p>
 
     <div class="product-box">
       <img src="smartbox.jpg" alt="Smartbox 4G">
       <h3>Smartbox 4G</h3>
-      <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro (ordinateur, téléphone, tablette). Parfait pour une maison ou un bureau.</p>
+      <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro. Parfait pour une maison ou un bureau.</p>
       <ul>
-        <li>Connexion stable</li>
-        <li>Wifi jusqu'à 32 appareils</li>
-        <li>Installation simple</li>
+        <li><i class="fas fa-check-circle"></i>Connexion stable</li>
+        <li><i class="fas fa-check-circle"></i>Wifi jusqu'à 32 appareils</li>
+        <li><i class="fas fa-check-circle"></i>Installation simple</li>
         <li><span style="color: red; font-weight: bold;">Prix : 149 000 Ar</span></li>
       </ul>
-      <button onclick="selectProduct('Smartbox 4G', '149000 Ar')">Commander cette Box</button>
+      <button onclick="selectProduct('Smartbox 4G', '149000 Ar', 'smartbox.jpg')">Commander cette Box</button>
     </div>
 
     <div class="product-box">
@@ -189,17 +206,18 @@
       <h3>Pocket Wifi 4G</h3>
       <p>Kely, mora entina amin'ny kitapo. Tena ilaina raha mandehandeha matetika ianao.</p>
       <ul>
-        <li>Portable sy kely</li>
-        <li>Connexion rapide 4G</li>
-        <li>Autonomie sur batterie</li>
+        <li><i class="fas fa-check-circle"></i>Portable sy kely</li>
+        <li><i class="fas fa-check-circle"></i>Connexion rapide 4G</li>
+        <li><i class="fas fa-check-circle"></i>Autonomie sur batterie</li>
         <li><span style="color: red; font-weight: bold;">Prix : 99 000 Ar</span></li>
       </ul>
-      <button onclick="selectProduct('Pocket Wifi 4G', '99000 Ar')">Commander cette Box</button>
+      <button onclick="selectProduct('Pocket Wifi 4G', '99000 Ar', 'pocketwifi.jpg')">Commander cette Box</button>
     </div>
 
-    <p class="section-title">2 - Apetraho eto ny mombamomba anao (aza asiana hadino na diso azafady)</p>
+    <p class="section-title">2 - Apetraho eto ny mombamomba anao</p>
 
     <form id="order-form">
+      <img id="selected-image" class="selected-image" src="" alt="Box choisi">
       <input type="text" name="prenoms" placeholder="Prénoms" required>
       <input type="text" name="nom" placeholder="Nom de famille" required>
       <input type="tel" name="numero" placeholder="Téléphone" required>
@@ -217,7 +235,20 @@
     <div id="success-message">
       <h3>Misaotra betsaka!</h3>
       <p>Ticket unique : <strong id="ticket-id"></strong></p>
-      <p id="delivery-mode" style="font-weight: bold; margin-top: 10px;"></p>
       <p class="section-title">3 - Safidio amin'ireto ny hifandraisanao amin'ny RAKOTO Commercial Airtel</p>
       <div class="contact-options">
-        <a id="whatsapp-link" class="whatsapp" href="#" target="_blank">
+        <a id="whatsapp-link" class="whatsapp" href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a id="sms-link" class="sms" href="#" target="_blank"><i class="fas fa-sms"></i> Message Texto</a>
+        <a class="facebook" href="https://www.facebook.com/airtelmadagascar" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="footer">
+    © 2025 Tranokalan'i RAKOTO Commercial Airtel – Powered by Airtel
+  </div>
+  <script>
+    // Votre code JavaScript pour gérer l'affichage du formulaire et du ticket
+  </script>
+</body>
+</html>
