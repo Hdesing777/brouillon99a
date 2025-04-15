@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tranokalan'i RAKOTO Commercial Airtel</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
@@ -171,7 +172,7 @@
     <p class="section-title">1 - Safidio amin'ireo ny box internet mety aminao</p>
 
     <div class="product-box">
-      <img src="smartbox.png" alt="Smartbox 4G">
+      <img src="smartbox.jpg" alt="Smartbox 4G">
       <h3>Smartbox 4G</h3>
       <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro (ordinateur, téléphone, tablette). Parfait pour une maison ou un bureau.</p>
       <ul>
@@ -184,7 +185,7 @@
     </div>
 
     <div class="product-box">
-      <img src="pocketwifi.png" alt="Pocket Wifi 4G">
+      <img src="pocketwifi.jpg" alt="Pocket Wifi 4G">
       <h3>Pocket Wifi 4G</h3>
       <p>Kely, mora entina amin'ny kitapo. Tena ilaina raha mandehandeha matetika ianao.</p>
       <ul>
@@ -219,77 +220,4 @@
       <p id="delivery-mode" style="font-weight: bold; margin-top: 10px;"></p>
       <p class="section-title">3 - Safidio amin'ireto ny hifandraisanao amin'ny RAKOTO Commercial Airtel</p>
       <div class="contact-options">
-        <a id="whatsapp-link" class="whatsapp" href="#" target="_blank">WhatsApp</a>
-        <a id="sms-link" class="sms" href="#" target="_blank">Message Texto</a>
-        <a id="facebook-link" class="facebook" href="https://www.facebook.com/airtelmadagascar" target="_blank">Facebook</a>
-      </div>
-    </div>
-
-  </div>  
-  <div class="footer">
-    © 2025 Tranokalan'i RAKOTO Commercial Airtel – Powered by Airtel
-  </div>  
-
-  <script>
-    function updateClock() {
-      const now = new Date();
-      const options = { timeZone: 'Indian/Antananarivo', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-      const heure = now.toLocaleTimeString('fr-FR', options);
-      document.getElementById("clock").textContent = "Ora ankehitriny (Madagasikara) : " + heure;
-    }
-    setInterval(updateClock, 1000);
-    updateClock();
-
-    const form = document.getElementById('order-form');
-    const successMessage = document.getElementById('success-message');
-    const adresseInput = document.getElementById('adresse');
-    const retraitCheckbox = document.getElementById('retrait');
-
-    retraitCheckbox.addEventListener('change', () => {
-      adresseInput.disabled = retraitCheckbox.checked;
-      if (retraitCheckbox.checked) adresseInput.value = '';
-    });
-
-    function selectProduct(name, price) {
-      document.getElementById('product-input').value = name;
-      document.getElementById('price-input').value = price;
-      form.classList.add('show');
-      form.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const ticket = 'AIRTEL-' + Date.now().toString(36).toUpperCase();
-      document.getElementById('ticket-id').textContent = ticket;
-
-      const nom = form.nom.value;
-      const prenoms = form.prenoms.value;
-      const numero = form.numero.value;
-      const produit = form['produit'].value;
-      const prix = form['prix'].value;
-      const adresse = adresseInput.value;
-      const retrait = retraitCheckbox.checked ? "Oui" : "Non";
-
-      let receptionText = "";
-      if (retraitCheckbox.checked) {
-        receptionText = "À récupérer au point de vente";
-      } else if (adresse) {
-        receptionText = "Livraison à domicile à " + adresse;
-      } else {
-        receptionText = "Mode de réception non précisé";
-      }
-
-      document.getElementById('delivery-mode').textContent = receptionText;
-
-      const message = `Ticket: ${ticket}\nNom: ${nom}\nPrénoms: ${prenoms}\nTéléphone: ${numero}\nProduit: ${produit}\nPrix: ${prix}\nMode de réception : ${receptionText}`;
-
-      document.getElementById('whatsapp-link').href = "https://wa.me/261334816838?text=" + encodeURIComponent(message);
-      document.getElementById('sms-link').href = "sms:+261334816838?body=" + encodeURIComponent(message);
-
-      form.style.display = "none";
-      successMessage.style.display = "block";
-      successMessage.scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-</body>
-</html>
+        <a id="whatsapp-link" class="whatsapp" href="#" target="_blank">
