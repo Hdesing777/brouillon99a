@@ -8,10 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    /* Couleurs principales : blanc (#fff), rouge Airtel (#e60000) et noir (#000) */
+    /* Couleurs principales: fond noir pour les produits, rouge et blanc pour l'identité Airtel */
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #fff;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
       color: #000;
@@ -24,7 +24,7 @@
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.4);
     }
     .container {
       max-width: 900px;
@@ -32,12 +32,12 @@
       padding: 30px;
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     }
     .section-title {
       font-weight: 700;
       font-size: 20px;
-      color: #e60000; /* Utilise la couleur rouge d'Airtel pour les titres */
+      color: #e60000;
       margin-top: 30px;
       margin-bottom: 20px;
     }
@@ -47,40 +47,42 @@
       border-radius: 50%;
       object-fit: cover;
       border: 5px solid #e60000;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     }
-    /* Présentation du nom du commercial avec une police stylée */
+    /* Nom du commercial en police Cinzel stylée (vous pouvez ajouter une autre police si souhaité) */
     .nom-commercial {
+      font-family: 'Montserrat', sans-serif;
       font-size: 22px;
       font-weight: 700;
       color: #e60000;
       margin-top: 10px;
       text-align: center;
     }
-    /* Style des boîtes produits */
+    /* Mise en forme des boîtes produits sur fond noir pour mettre en évidence le PNG transparent */
     .product-box {
-      background: #fff;
-      border: 1px solid #000; /* Bordure noire pour un effet contrasté */
+      background: #000; /* Fond noir */
+      color: #fff; /* Texte en blanc pour le contraste */
       padding: 20px;
       border-radius: 12px;
       margin-bottom: 20px;
-      text-align: left; /* Texte de description aligné à gauche */
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
+      text-align: left; /* Description alignée à gauche */
     }
     .product-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     }
+    /* Pour que les images PNG gardent leur transparence, aucun encadrement spécifique n'est appliqué */
     .product-box img {
       max-width: 200px;
       height: auto;
       margin-bottom: 10px;
       display: block;
-      margin-left: auto; /* Pour centrer l'image, si désiré */
+      margin-left: auto; /* Optionnel : centrer l'image si désiré */
       box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
-    /* Le nom du produit (h3) aligné à droite */
+    /* Le nom du box aligné à droite */
     .product-box h3 {
       text-align: right;
       color: #e60000;
@@ -90,7 +92,7 @@
     .product-box p {
       margin: 0 0 10px;
     }
-    /* Liste des avantages : texte aligné à gauche */
+    /* Liste des avantages alignée à gauche */
     .product-box ul {
       list-style: none;
       padding: 0;
@@ -98,26 +100,26 @@
     }
     .product-box ul li {
       font-size: 14px;
-      color: #000;
       margin: 5px 0;
-      position: relative;
       padding-left: 24px;
+      position: relative;
+      color: #ccc;
     }
     .product-box ul li::before {
       content: "\f058"; /* Code Font Awesome pour check-circle */
-      font-family: "Font Awesome 6 Free"; 
+      font-family: "Font Awesome 6 Free";
       font-weight: 900;
       position: absolute;
       left: 0;
       color: #e60000;
     }
-    /* Le prix est centré */
+    /* Le prix centré */
     .prix {
       text-align: center;
       font-size: 20px;
       font-weight: bold;
       margin: 10px 0;
-      color: #000;
+      color: #fff;
     }
     .product-box button {
       background: #e60000;
@@ -191,7 +193,7 @@
       font-weight: 700;
       color: #fff;
       text-decoration: none;
-      transition: transform 0.2s;
+      transition: transform 0.3s, background-color 0.3s;
     }
     .contact-options a:hover {
       transform: scale(1.05);
@@ -208,7 +210,7 @@
     }
     #clock {
       font-size: 14px;
-      color: #444;
+      color: #ccc;
       text-align: center;
       margin-bottom: 10px;
     }
@@ -284,7 +286,6 @@
     © 2025 Tranokalan'i RAKOTO Commercial Airtel – Powered by Airtel
   </div>
   <script>
-    // Mise à jour de l'horloge en temps réel
     function updateClock() {
       const now = new Date();
       const options = { timeZone: "Indian/Antananarivo", hour: "2-digit", minute: "2-digit", second: "2-digit" };
