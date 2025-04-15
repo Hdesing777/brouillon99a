@@ -4,38 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tranokalan'i RAKOTO Commercial Airtel</title>
+  <!-- Google Fonts et Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* Couleurs principales : blanc (#fff), rouge Airtel (#e60000) et noir (#000) */
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #121212; /* Fond sombre */
-      color: #f4f4f4;
+      background-color: #fff;
       margin: 0;
       padding: 0;
+      color: #000;
     }
     header {
-      background-color: #1d1d1d;
-      color: #FFD700;
+      background-color: #e60000;
+      color: #fff;
       padding: 20px 0;
       text-align: center;
       font-size: 24px;
       font-weight: 700;
       letter-spacing: 1px;
-      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     }
     .container {
       max-width: 900px;
       margin: auto;
       padding: 30px;
-      background: #1e1e1e; /* Fond plus foncé */
+      background: #fff;
       border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .section-title {
       font-weight: 700;
       font-size: 20px;
-      color: #FFD700;
+      color: #e60000; /* Utilise la couleur rouge d'Airtel pour les titres */
       margin-top: 30px;
       margin-bottom: 20px;
     }
@@ -44,32 +46,51 @@
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid #FFD700;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+      border: 5px solid #e60000;
+      box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
     }
-    .product-box {
-      background: #2d2d2d;
-      border: 1px solid #444;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 30px;
+    /* Présentation du nom du commercial avec une police stylée */
+    .nom-commercial {
+      font-size: 22px;
+      font-weight: 700;
+      color: #e60000;
+      margin-top: 10px;
       text-align: center;
+    }
+    /* Style des boîtes produits */
+    .product-box {
+      background: #fff;
+      border: 1px solid #000; /* Bordure noire pour un effet contrasté */
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      text-align: left; /* Texte de description aligné à gauche */
       transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
     }
     .product-box:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .product-box img {
       max-width: 200px;
       height: auto;
       margin-bottom: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      display: block;
+      margin-left: auto; /* Pour centrer l'image, si désiré */
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     }
+    /* Le nom du produit (h3) aligné à droite */
     .product-box h3 {
-      color: #FFD700;
+      text-align: right;
+      color: #e60000;
       margin-top: 10px;
+      margin-bottom: 10px;
     }
+    .product-box p {
+      margin: 0 0 10px;
+    }
+    /* Liste des avantages : texte aligné à gauche */
     .product-box ul {
       list-style: none;
       padding: 0;
@@ -77,32 +98,40 @@
     }
     .product-box ul li {
       font-size: 14px;
-      color: #ccc;
+      color: #000;
       margin: 5px 0;
+      position: relative;
+      padding-left: 24px;
     }
-    .product-box ul li i {
-      color: #FFD700;
-      margin-right: 8px;
+    .product-box ul li::before {
+      content: "\f058"; /* Code Font Awesome pour check-circle */
+      font-family: "Font Awesome 6 Free"; 
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      color: #e60000;
     }
+    /* Le prix est centré */
     .prix {
+      text-align: center;
       font-size: 20px;
       font-weight: bold;
       margin: 10px 0;
-      color: #FFD700;
+      color: #000;
     }
     .product-box button {
-      background: #FFD700;
-      color: #1e1e1e;
-      padding: 12px 25px;
+      background: #e60000;
+      color: #fff;
+      padding: 10px 20px;
       border: none;
       border-radius: 30px;
       font-weight: 700;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 16px;
       transition: 0.3s;
     }
     .product-box button:hover {
-      background: #e5b300;
+      background: #b30000;
     }
     form {
       display: none;
@@ -117,21 +146,21 @@
       width: 180px;
       margin: 0 auto 15px;
       display: block;
-      border: 4px solid #FFD700;
+      border: 4px solid #e60000;
       border-radius: 8px;
-      box-shadow: 0 0 15px #FFD700;
+      box-shadow: 0 0 10px #e60000;
     }
     input[type="text"], input[type="tel"] {
       padding: 14px;
-      border: 1px solid #444;
+      border: 1px solid #000;
       border-radius: 6px;
       font-size: 16px;
-      background-color: #333;
-      color: #f4f4f4;
+      background-color: #fff;
+      color: #000;
     }
     button[type="submit"] {
-      background: #FFD700;
-      color: #1e1e1e;
+      background: #e60000;
+      color: #fff;
       padding: 14px;
       font-size: 18px;
       border: none;
@@ -142,26 +171,27 @@
       transition: 0.3s;
     }
     button[type="submit"]:hover {
-      background: #e5b300;
+      background: #b30000;
     }
     #success-message {
       display: none;
-      background: #333;
-      padding: 25px;
-      border-radius: 12px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
       text-align: center;
       margin-top: 20px;
-      border: 1px solid #444;
+      border: 1px solid #000;
+      color: #000;
     }
     .contact-options a {
       display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      border-radius: 30px;
+      margin: 8px;
+      padding: 10px 20px;
+      border-radius: 25px;
       font-weight: 700;
       color: #fff;
       text-decoration: none;
-      transition: transform 0.3s, background-color 0.3s;
+      transition: transform 0.2s;
     }
     .contact-options a:hover {
       transform: scale(1.05);
@@ -171,19 +201,19 @@
     .sms { background: #6c757d; }
     .footer {
       text-align: center;
-      color: #888;
+      color: #444;
       font-size: 14px;
       margin-top: 30px;
       padding-bottom: 20px;
     }
     #clock {
       font-size: 14px;
-      color: #ccc;
+      color: #444;
       text-align: center;
       margin-bottom: 10px;
     }
     input:focus {
-      outline: 2px solid #FFD700;
+      outline: 2px solid #e60000;
     }
   </style>
 </head>
@@ -192,8 +222,8 @@
   <div id="clock"></div>
   <div class="container">
     <div style="text-align: center;">
-      <img src="rakoto.jpg" alt="RAKOTO - Commercial Airtel" class="rakoto-photo" />
-      <p style="font-weight: bold; color: #FFD700; margin-top: 10px;">RAKOTO - Commercial Airtel (Vente Professionnelle)</p>
+      <img src="rakoto.jpg" alt="RAKOTO - Commercial Airtel" class="rakoto-photo">
+      <p class="nom-commercial">RAKOTO - Commercial Airtel (Vente Professionnelle)</p>
     </div>
     <p style="text-align: center; margin-bottom: 20px;">
       RAKOTO dia manolotra ho an'ny mpanjifa ny box internet Airtel, haingam-pandeha, mora vidy, ary azo entina amin'izay tiana.
@@ -204,24 +234,24 @@
       <h3>Smartbox 4G</h3>
       <p>Internet haingam-pandeha, afaka mampifandray fitaovana maro. Parfait pour une maison ou un bureau.</p>
       <ul>
-        <li><i class="fa-solid fa-check-circle"></i> Connexion stable</li>
-        <li><i class="fa-solid fa-check-circle"></i> Wifi jusqu'à 32 appareils</li>
-        <li><i class="fa-solid fa-check-circle"></i> Installation simple</li>
+        <li>Connexion stable</li>
+        <li>Wifi jusqu'à 32 appareils</li>
+        <li>Installation simple</li>
       </ul>
-      <p class="prix">Prix : 149 000 Ar</p>
-      <button onclick="selectProduct('Smartbox 4G', '149000 Ar', 'smartbox.png')">Commander cette Box</button>
+      <div class="prix">Prix : 149 000 Ar</div>
+      <button onclick="selectProduct('Smartbox 4G','149000 Ar','smartbox.png')">Commander cette Box</button>
     </div>
     <div class="product-box">
       <img src="pocketwifi.png" alt="Pocket Wifi 4G">
       <h3>Pocket Wifi 4G</h3>
       <p>Kely, antonona ao am-paosy. Tena ilaina raha mandehandeha matetika ianao.</p>
       <ul>
-        <li><i class="fa-solid fa-check-circle"></i> Portable sy kely</li>
-        <li><i class="fa-solid fa-check-circle"></i> Connexion rapide 4G</li>
-        <li><i class="fa-solid fa-check-circle"></i> Autonomie sur batterie</li>
+        <li>Portable sy kely</li>
+        <li>Connexion rapide 4G</li>
+        <li>Autonomie sur batterie</li>
       </ul>
-      <p class="prix">Prix : 99 000 Ar</p>
-      <button onclick="selectProduct('Pocket Wifi 4G', '99000 Ar', 'pocketwifi.png')">Commander cette Box</button>
+      <div class="prix">Prix : 99 000 Ar</div>
+      <button onclick="selectProduct('Pocket Wifi 4G','99000 Ar','pocketwifi.png')">Commander cette Box</button>
     </div>
     <h2 class="section-title">2 - Apetraho eto ny mombamomba anao</h2>
     <form id="order-form">
@@ -254,6 +284,7 @@
     © 2025 Tranokalan'i RAKOTO Commercial Airtel – Powered by Airtel
   </div>
   <script>
+    // Mise à jour de l'horloge en temps réel
     function updateClock() {
       const now = new Date();
       const options = { timeZone: "Indian/Antananarivo", hour: "2-digit", minute: "2-digit", second: "2-digit" };
@@ -297,4 +328,11 @@
       document.getElementById("whatsapp-link").href = "https://wa.me/261334816838?text=" + encodeURIComponent(message);
       document.getElementById("sms-link").href = "sms:+261334816838?body=" + encodeURIComponent(message);
       
-      form.style.display
+      form.style.display = "none";
+      successMessage.style.display = "block";
+      successMessage.scrollIntoView({ behavior: "smooth" });
+    });
+  </script>
+  <!-- Ce site a été conçu par RAKOTO pour Airtel Madagascar. Reproduction interdite. -->
+</body>
+  </html>
